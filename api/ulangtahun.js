@@ -14,7 +14,7 @@ export default async function handler(req, res) {
     let chat_id = null;
   
     if (today === "16-04") {
-      message = "🎉 Selamat ulang tahun, Ali! Semoga hari ini jadi awal dari hal-hal baik yang lebih banyak, lebih indah, dan lebih bikin senyum. Makasih udah jadi orang yang kuat, tulus, dan selalu ngasih rasa nyaman buat orang-orang di sekitarmu. Tetap jadi kamu yang keren, apa adanya, dan penuh cinta. Hari ini tentang kamu, jadi jangan lupa bahagia ya. 🤍✨";
+      message = "🎉 tes";
       chat_id = chat_ids.kamu;
     } else if (today === "23-11") {
       message = "🎉 Selamat ulang tahun, Gep! Semoga hari ini jadi awal dari hal-hal baik yang lebih banyak, lebih indah, dan lebih bikin senyum. Makasih udah jadi orang yang kuat, tulus, dan selalu ngasih rasa nyaman buat orang-orang di sekitarmu. Tetap jadi kamu yang keren, apa adanya, dan penuh cinta. Hari ini tentang kamu, jadi jangan lupa bahagia ya. 🤍✨";
