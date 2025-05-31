@@ -9,7 +9,7 @@ export default async function handler(req, res) {
 
     // --- Definisi Token dan Chat ID secara Hardcode ---
     // PENTING: Ganti dengan token dan chat ID Anda yang sebenarnya
-    const TELEGRAM_BOT_TOKEN = '7732580165:AAEehBEHZRuzzQyXu3BybTWf8pWR0Nm9uMQ'; // GANTI DENGAN TOKEN BOT ANDA
+    const TELEGRAM_BOT_TOKEN = '77732580165:AAEehBEHZRuzzQyXu3BybTWf8pWR0Nm9uMQ'; // GANTI DENGAN TOKEN BOT ANDA
     const TELEGRAM_CHAT_ID = '1985797056'; // GANTI DENGAN ID CHAT TELEGRAM ANDA
     // --- Akhir Definisi Hardcode ---
 
