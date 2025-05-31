@@ -7,22 +7,16 @@ export default async function handler(req, res) {
         return res.status(405).json({ error: 'Method Not Allowed' });
     }
 
-    // Ambil BOT_TOKEN dan CHAT_ID dari Vercel Environment Variables
-    const TELEGRAM_BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN;
-    const TELEGRAM_CHAT_ID = process.env.TELEGRAM_CHAT_ID;
+    // --- Definisi Token dan Chat ID secara Hardcode ---
+    // PENTING: Ganti dengan token dan chat ID Anda yang sebenarnya
+    const TELEGRAM_BOT_TOKEN = '7732580165:AAEehBEHZRuzzQyXu3BybTWf8pWR0Nm9uMQ'; // GANTI DENGAN TOKEN BOT ANDA
+    const TELEGRAM_CHAT_ID = '1985797056'; // GANTI DENGAN ID CHAT TELEGRAM ANDA
+    // --- Akhir Definisi Hardcode ---
 
     // Ambil pesan dari body request
     const { text } = req.body;
 
-    // Validasi bahwa Environment Variables sudah disetel dan pesan ada
-    if (!TELEGRAM_BOT_TOKEN) {
-        console.error('TELEGRAM_BOT_TOKEN environment variable is not set.');
-        return res.status(500).json({ error: 'Server configuration error: Telegram Bot Token is missing.' });
-    }
-    if (!TELEGRAM_CHAT_ID) {
-        console.error('TELEGRAM_CHAT_ID environment variable is not set.');
-        return res.status(500).json({ error: 'Server configuration error: Telegram Chat ID is missing.' });
-    }
+    // Validasi bahwa pesan ada
     if (!text) {
         return res.status(400).json({ error: 'Text message is required in the request body.' });
     }
@@ -49,7 +43,6 @@ export default async function handler(req, res) {
             res.status(200).json({ message: 'Notification sent!', data: data });
         } else {
             console.error('Telegram API error:', data);
-            // Teruskan pesan error dari Telegram jika ada
             res.status(telegramResponse.status).json({ error: data.description || 'Failed to send Telegram message', telegram_response: data });
         }
     } catch (error) {
